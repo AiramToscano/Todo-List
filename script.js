@@ -5,7 +5,6 @@ test1.addEventListener('click',function(){
   const test3 = document.querySelector('#lista-tarefas')
   const newli = document.createElement('li');
   newli.innerText = test2.value;
-  newli.className = "testli";
   test3.appendChild(newli);
   test2.value= '';
 });
@@ -16,12 +15,17 @@ function color(){
 const pegarclasselist = document.querySelectorAll("#lista-tarefas");
  for (let i = 0; i < pegarclasselist.length ; i += 1){ 
         pegarclasselist[i].addEventListener('click', function(e){
-            e.target.style.backgroundColor = 'rgb(128, 128, 128)';
-              
+            const pegarli = document.getElementsByTagName('li');
+            for(let i = 0 ; i < pegarli.length ; i += 1){
+                pegarli[i].classList.remove('testli');
+                pegarli[i].style.backgroundColor = 'white';
+            }
+              e.target.classList.add('testli');
+              e.target.style.backgroundColor = 'rgb(128, 128, 128)';
         });
-
  }
-
 }
 color();
+
+
 
