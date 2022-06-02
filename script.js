@@ -9,7 +9,6 @@ function click() {
     const newli = document.createElement('li');
     newli.innerText = test2.value;
     test31.appendChild(newli);
-    test2.value = '';
   });
 }
 click();
@@ -60,7 +59,7 @@ function clearbuttomfinish() {
       const compara = children1[i];
       if (compara.classList.contains('completed')) {
         compara.remove();
-      }
+      } 
     }
   });
 }
